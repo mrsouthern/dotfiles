@@ -1,0 +1,218 @@
+{
+    "[Log]": {
+        "editor.wordWrap": "on"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnType": true
+    },
+    "command-runner.commands": {
+        "echo file": "echo ${file}",
+        "echo workspaceFolder": "echo ${workspaceFolder}"
+    },
+    "command-runner.terminal.autoClear": true,
+    "command-runner.terminal.autoFocus": true,
+    "command-runner.terminal.name": "runCommand",
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [
+        80,
+        88,
+        120
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        "**/*.egg-info": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+        "**/.vscode": true,
+        "**/__pycache__": true,
+        "**/venv": true
+    },
+    "files.watcherExclude": {
+        "**/.history/**": true,
+        "**/.mypy_cache/**": true,
+        "**/.pytest_cache/**": true,
+        "**/.venv*/**": true,
+        "**/.venv/**": true,
+        "**/__pycache__/**": true,
+        "[csharp]": {
+            "editor.defaultFormatter": "ms-dotnettools.csharp"
+        },
+        "[markdown]": {
+            "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+        },
+        "black-formatter.args": [
+            "--config",
+            "pyproject.toml"
+        ],
+        "black-formatter.importStrategy": "fromEnvironment",
+        "editor.guides.bracketPairs": true,
+        "editor.inlineSuggest.enabled": true,
+        "editor.stickyScroll.enabled": true,
+        "githubPullRequests.pullBranch": "never",
+        "markdown-mermaid.darkModeTheme": "default",
+        "markdown-mermaid.lightModeTheme": "base",
+        "markdown.preview.scrollPreviewWithEditor": false,
+        "mermaid-editor.generate.quality": 5,
+        "mermaid-editor.generate.scale": 5,
+        "mermaid-export.outputType": "svg",
+        "mermaid.vscode.minimap": false,
+        "python.analysis.downloadStubs": true,
+        "python.analysis.enableSyncServer": true,
+        "python.analysis.exclude": [
+            "**/.venv*/**",
+            "**/venv*/**"
+        ],
+        "python.analysis.indexing": true,
+        "python.analysis.logLevel": "Warning",
+        "python.analysis.placeholderCheck": true,
+        "python.analysis.refactoring.allowMovingSymbols": true,
+        "python.analysis.typeCheckingMode": "basic",
+        "search.exclude": {
+            "**/.venv/**": true,
+            "**/venv/**": true
+        }
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true
+    },
+    "jupyter.askForKernelRestart": false,
+    "jupyter.debugJustMyCode": false,
+    "logViewer.watch": [
+        {
+            "pattern": "pytest.log",
+            "title": "pytest.log"
+        }
+    ],
+    "mypy.runUsingActiveInterpreter": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.extraPaths": [
+        ".venv/lib/python3.9/site-packages/"
+    ],
+    "python.defaultInterpreterPath": "python",
+    // "python.linting.flake8Args": ["--config", "setup.cfg"]
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.formatting.blackArgs": [
+        // "--diff",
+        "--config",
+        "pyproject.toml"
+    ],
+    "python.formatting.provider": "black",
+    // "python.linting.mypyArgs": ["--config", "setup.cfg"],
+    "python.linting.flake8Enabled": false,
+    "python.linting.ignorePatterns": [
+        "**/site-packages/**/*.py",
+        ".vscode/*.py",
+        "venv/**/*.py",
+        ".venv/**/*.py"
+    ],
+    "python.linting.mypyCategorySeverity.error": "Information",
+    "python.linting.mypyEnabled": false,
+    "python.linting.pylintArgs": [
+        "--disable=C0111"
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/usr/bin/python3",
+    "python.testing.pytestArgs": [
+        "--verbose",
+    ],
+    "python.testing.pytestEnabled": true,
+    "redhat.telemetry.enabled": false,
+    "runTerminalCommand.commands": [
+        {
+            "auto": true,
+            "command": "pip install black zimports autoflake isort docformatter && exit 0",
+            "name": "Python Prerequisites",
+            "preserve": false
+        },
+        {
+            "auto": true,
+            "command": "autoflake --in-place --remove-all-unused-imports '{resource}' && zimports '{resource}' && black --line-length=120 '{resource}' && sleep 1 && exit 0",
+            "name": "Python ZImports and Black",
+            "preserve": false
+        },
+        {
+            "auto": true,
+            "command": "black --config pyproject.toml '{resource}' && sleep 1 && exit 0",
+            "name": "Python Black",
+            "preserve": false
+        },
+        {
+            "auto": true,
+            "command": "zimports '{resource}' && sleep 1 && exit 0",
+            "name": "Python Zimports",
+            "preserve": false
+        },
+        {
+            "auto": true,
+            "command": "docformatter --in-place --wrap-summaries=150 --wrap-descriptions=150 '{resource}' && sleep 1 && exit 0",
+            "name": "Python Docformatter",
+            "preserve": false
+        },
+        {
+            "auto": true,
+            "command": "autoflake --in-place --remove-all-unused-imports '{resource}' && isort '{resource}' && sleep 1 && exit 0",
+            "name": "Python: Autoflake and isort",
+            "preserve": false
+        },
+        {
+            "auto": true,
+            "command": "sort '{resource}'",
+            "name": "sort",
+            "preserve": false
+        },
+        {
+            "auto": true,
+            "command": "uniq -u '{resource}'",
+            "name": "uniq",
+            "preserve": false
+        }
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.detectLocale": "off",
+    // don't use this as it uses different rules than we do
+    // "[python]": {
+    //     "editor.codeActionsOnSave": {
+    //         "source.organizeImports": true
+    //     },
+    // },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.persistentSessionScrollback": 10000,
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "args": [],
+            "icon": "terminal-cmd",
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ]
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "PowerShell": {
+            "icon": "terminal-powershell",
+            "source": "PowerShell"
+        },
+        "Ubuntu (WSL)": {
+            "args": [
+                "-d",
+                "Ubuntu"
+            ],
+            "path": "C:\\Windows\\System32\\wsl.exe"
+        }
+    },
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.shellIntegration.history": 1000,
+    // "files.autoSave": "afterDelay",
+    // "files.autoSaveDelay": 1000,
+    "workbench.colorTheme": "Default Dark+",
+    "xml.server.binary.trustedHashes": [
+        "8a2916f6e83f15a98a222f1ee00016885f312bd89e1ddcfc653e5b993e127cc4"
+    ]
+}

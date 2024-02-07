@@ -1,0 +1,28 @@
+[user]
+        email = mark.southern@outlook.com
+        name = "Mark Southern"
+
+[alias]
+last = "log -1 HEAD"
+unstage = "reset HEAD --"
+no-hooks = "-c core.hooksPath=/dev/null"
+stash-unstaged = "!cd "${GIT_PREFIX:-.}"; f() { \
+        git stash --quiet --staged;             \
+        git stash -u \"$@\";                    \
+        git stash pop --quiet \"stash@{1}\";    \
+        git add -A;                             \
+}; f"
+addmm = !git status --porcelain | grep -E \"^MM\" | awk \"{print \\$2}\" | xargs git add
+
+[fetch]
+        prune = true
+
+[safe]
+        directory = *
+
+[push]
+        autoSetupRemote = true
+        default = current
+
+[pull]
+        ff = only
